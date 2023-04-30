@@ -1,0 +1,77 @@
+
+export const products = [
+  {
+    id: 1,
+    name: "Winter body",
+    description: [
+      { support: "گارانتی مادام العمر" },
+      { support: "ارسال رایگان" },
+      { support: "اورجینال" },
+    ],
+    price: 120,
+    offPrice: 120,
+    discount: 0,
+    image: "https://s6.uupload.ir/files/daniel-storek-jm-qked1gmi-unsplash_ja2.jpg",
+  },
+  {
+    id: 2,
+    name: "Nike",
+    description: [{ support: "گارانتی مادام العمر" }, { support: "اورجینال" }],
+    price: 110,
+    offPrice: 100,
+    discount: 8,
+    image: "data:image/jpeg;base64,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",
+  },
+  {
+    id: 3,
+    name: "Vans",
+    description: [
+      { support: "گارانتی مادام العمر" },
+      { support: "اورجینال" },
+      { support: "ارسال رایگان" },
+    ],
+    price: 99,
+    offPrice: 89,
+    discount: 10,
+    image: "https://s6.uupload.ir/files/maksim-larin-nopsc3nwtzy-unsplash_i0j6.jpg",
+  },
+  {
+    id: 4,
+    name: "White",
+    description: [
+      { support: "گارانتی مادام العمر" },
+      { support: "اورجینال" },
+      { support: "ارسال رایگان" },
+    ],
+    price: 260,
+    offPrice: 220,
+    discount: 15,
+    image: "https://s6.uupload.ir/files/revolt-164_6wvehfi-unsplash_xaog.jpg",
+  },
+  {
+    id: 5,
+    name: "Croopped-shoe",
+    description: [
+      { support: "گارانتی مادام العمر" },
+      { support: "اورجینال" },
+      { support: "ارسال رایگان" },
+    ],
+    price: 150,
+    offPrice: 150,
+    discount: 0,
+    image: "https://s6.uupload.ir/files/maksim-larin-ezdrvza1hzw-unsplash_nm8f.jpg",
+  },
+  {
+    id: 6,
+    name: "Blues",
+    description: [
+      { support: "گارانتی مادام العمر" },
+      { support: "اورجینال" },
+      { support: "ارسال رایگان" },
+    ],
+    price: 220,
+    offPrice: 200,
+    discount: 13,
+    image: "https://s6.uupload.ir/files/luis-felipe-lins-j2-waqdckus-unsplash_ku8a.jpg",
+  },
+];
