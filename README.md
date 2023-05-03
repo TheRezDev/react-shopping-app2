@@ -3,7 +3,7 @@
 
 - 🔭 I’m currently working on [React-shopping app](https://github.com/TheRezDev/react-shopping-app2)
 
-- 🌱 I’m currently learning **Reactjs, Saheb Mohammadi Courses**
+- 🌱 I’m currently learning **Reactjs, Saheb Mohammadi's https://fronthooks.ir/ Reactjs Course**
 
 - 💬 Ask me about **react**
 
