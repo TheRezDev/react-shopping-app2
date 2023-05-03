@@ -1,5 +1,4 @@
-import React from 'react'
-import { useContext, useReducer, createContext } from 'react';
+import React,{ useContext, useReducer, createContext } from 'react';
 import cartReducer from './cartReducer';
 
 const CartContext = createContext();

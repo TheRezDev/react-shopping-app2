@@ -52,7 +52,7 @@ const CartPage = () => {
             <section className='cartSummery'>
                   <h2>cart summary</h2>
                   <div>
-                     {total}
+                     {total} $
                   </div>
             </section>
             </section>

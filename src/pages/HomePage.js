@@ -4,6 +4,7 @@ import { useCartActions } from '../Context/CartProvider';
 
 export const HomePage = () => {
    const dispatch = useCartActions();
+
    const addProductHandler = (product) => {
       dispatch({ type: 'ADD_TO_CART', payload: product });
    };
@@ -21,9 +22,8 @@ export const HomePage = () => {
                         <p>{product.name}</p>
                         <p>$ {product.price}</p>
                         <button
-                           onClick={() =>
-                              addProductHandler(product)}
                            className='btn primary'
+                           onClick={() =>addProductHandler(product)}
                         >
                            add to Cart
                         </button>

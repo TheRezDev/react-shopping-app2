@@ -1,37 +1,42 @@
-const cartReducer = (state, action) => {
-   switch (action.type) {
-      case "ADD_TO_CART":
-         {
-            const updatedCart = [...state.cart];
-            const updatedItemIndex = updatedCart.findIndex(
-               (item) => item.id === action.payload.id
-         );
-         if (updatedItemIndex < 0) {
-            updatedCart.push({...action.payload, quantity:1});
+const addProductToCart = (state, payload) => {
+   const updatedCart = [...state.cart];
+   const updatedItemIndex = updatedCart.findIndex(
+      (item) => item.id === payload.id
+   );
+   if (updatedItemIndex < 0) {
+            updatedCart.push({...payload, quantity:1});
          } else {
             const updatedItem = { ...updatedCart[updatedItemIndex] };
             updatedItem.quantity++;
             updatedCart[updatedItemIndex] = updatedItem;
          }
-         return {...state, cart:updatedCart};
-         }
-      case "REMOVE_PRODUCT": {
-         const updatedCart = [...state.cart];
+         return {...state, cart:updatedCart, total:state.total + payload.price,};
+};
+
+const removeProductFromCart = (state, payload) => {
+   const updatedCart = [...state.cart];
             const updatedItemIndex = updatedCart.findIndex(
-               (item) => item.id === action.payload.id
+               (item) => item.id === payload.id
          );
          const updatedItem = { ...updatedCart[updatedItemIndex] };
          if (updatedItem.quantity === 1) {
-            const filteredCart = updatedCart.filter((item) => item.id !== action.payload.id)
+            const filteredCart = updatedCart.filter((item) => item.id !== payload.id)
             return{...state, cart: filteredCart};
 
          } else {
             updatedItem.quantity--
             updatedCart[updatedItemIndex] = updatedItem;
-            return {...state, cart:updatedCart}
+            return {...state, cart:updatedCart, total:state.total - payload.price,}
          }
-      }
-      default: return state;
+}
+
+
+
+const cartReducer = (state, action) => {
+   switch (action.type) {
+      case "ADD_TO_CART": return addProductToCart(state, action.payload);
+      case "REMOVE_PRODUCT": return removeProductFromCart(state, action.payload);
+   default: return state;
    }
 };
 
